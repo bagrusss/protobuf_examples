@@ -2,10 +2,11 @@ package ru.bagrusss.demo
 
 class NetworkExample(private val netSender: NetSender) {
 
-    fun sendLoginExample(pin: String) {
-        val request = Login.Request.newBuilder()
-                .setPin(pin)
-                .build()
+    fun sendLoginExample(pinCode: String) {
+        val request = Login.Request.newBuilder().run {
+            pin = pinCode
+            build()
+        }
 
         request.run {
             netSender.send(method, path, this, Login.Response.parser())

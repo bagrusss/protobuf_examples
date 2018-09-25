@@ -2,9 +2,9 @@ syntax = "proto2";
 
 package demo;
 
-import "google/protobuf/descriptor.proto";
-
 option java_package = "ru.bagrusss.demo";
+
+import "google/protobuf/descriptor.proto";
 
 message JavaMessageOptions {
     optional bool generate_realm_object = 1 [default = false];
@@ -43,3 +43,5 @@ extend google.protobuf.FileOptions {
 extend google.protobuf.FieldOptions {
     optional JavaFieldOptions java_field_options = 5100986;
 }
+
+option (.demo.java_file_options).compile_for_framework = false;

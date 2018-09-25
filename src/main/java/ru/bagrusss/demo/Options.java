@@ -2639,8 +2639,8 @@ public final class Options {
       "\034.google.protobuf.FileOptions\030\273\253\267\002 \001(\0132\025" +
       ".demo.JavaFileOptions:T\n\022java_field_opti" +
       "ons\022\035.google.protobuf.FieldOptions\030\272\253\267\002 " +
-      "\001(\0132\026.demo.JavaFieldOptionsB\022\n\020ru.bagrus" +
-      "ss.demo"
+      "\001(\0132\026.demo.JavaFieldOptionsB\031\n\020ru.bagrus" +
+      "ss.demo\332\333\272\023\002\020\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2683,6 +2683,11 @@ public final class Options {
     javaEnumOptions.internalInit(descriptor.getExtensions().get(1));
     javaFileOptions.internalInit(descriptor.getExtensions().get(2));
     javaFieldOptions.internalInit(descriptor.getExtensions().get(3));
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(ru.bagrusss.demo.Options.javaFileOptions);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     google.protobuf.DescriptorProtos.getDescriptor();
   }
 
