@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package demo;
+
+import "user.proto";
+
+option java_package = "ru.bagrusss.demo";
+option java_multiple_files = true;
+option java_outer_classname = "ServerApi";
+
+message Login {
+    message Request {
+        required string path = 1 [default = "/login"];
+        required string method = 2 [default = "post"];
+        optional string pin = 3;
+        optional string touchIdToken = 4;
+    }
+    message Response {
+        required string authToken = 1;
+    }
+}
+
+message Logout {
+    message Request {
+        required string path = 1 [default = "/logout"];
+        required string method = 2 [default = "delete"];
+    }
+    message Response {}
+}

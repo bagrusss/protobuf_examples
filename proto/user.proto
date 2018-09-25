@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package demo;
+
+option java_package = "ru.bagrusss.demo";
+option java_multiple_files = true;
+
+message User {
+  required string name = 1;
+  required int64 id = 2;
+  optional string email = 3;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message Phone {
+    required string number = 1;
+    optional PhoneType type = 2 [default = HOME];
+  }
+
+  repeated Phone phones = 4;
+}
+
+message Contacts {
+  repeated User people = 1;
+}
