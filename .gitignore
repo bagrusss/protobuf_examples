@@ -1,6 +1,7 @@
 .idea/
 .gradle/
 *.iml
+out/
 
 # File-based project format
 *.iws
