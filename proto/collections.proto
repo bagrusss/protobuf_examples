@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package demo;
+
+option java_package = "ru.bagrusss.demo";
+option java_multiple_files = true;
+
+import "user.proto";
+
+message Collections {
+    repeated string strings = 1;
+    map<string, User> usersMap = 2;
+}
