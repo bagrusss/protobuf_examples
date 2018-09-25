@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+package demo;
+
+import "google/protobuf/descriptor.proto";
+
+option java_package = "ru.bagrusss.demo";
+
+message JavaMessageOptions {
+    optional bool generate_realm_object = 1 [default = false];
+    optional string additional_class_name = 2;
+}
+
+message JavaEnumOptions {
+    optional bool generate_realm_object = 1 [default = false];
+}
+
+message JavaFileOptions {
+    optional string class_prefix = 1;
+    optional bool compile_for_framework = 2 [default = true];
+    optional bool generate_realm_models = 3 [default = false];
+}
+
+message JavaFieldOptions {
+    optional bool realm_indexed = 1 [default = false];
+    optional bool realm_primary_key = 2 [default = false];
+}
+
+
+
+extend google.protobuf.MessageOptions {
+    optional JavaMessageOptions java_message_options = 5100985;
+}
+
+extend google.protobuf.EnumOptions {
+    optional JavaEnumOptions java_enum_options = 5100984;
+}
+
+extend google.protobuf.FileOptions {
+    optional JavaFileOptions java_file_options = 5100987;
+}
+
+extend google.protobuf.FieldOptions {
+    optional JavaFieldOptions java_field_options = 5100986;
+}
