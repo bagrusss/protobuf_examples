@@ -6,7 +6,8 @@ import "user.proto";
 
 option java_package = "ru.bagrusss.demo";
 option java_multiple_files = true;
-option java_outer_classname = "ServerApi";
+
+//option java_outer_classname = "ServerApi";
 
 message Login {
     message Request {
@@ -17,6 +18,7 @@ message Login {
     }
     message Response {
         required string authToken = 1;
+        required User user = 2;
     }
 }
 
