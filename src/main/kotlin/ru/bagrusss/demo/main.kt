@@ -1,5 +1,7 @@
 package ru.bagrusss.demo
 
+import ru.bagrusss.demo.net.ProtoJsonUtils
+
 
 fun main(args: Array<String>) {
 
