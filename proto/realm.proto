@@ -10,6 +10,7 @@ import "options.proto";
 message OperationList {
     option (.demo.java_message_options) = { generate_realm_object : true };
 
-    required string id = 1 [(.demo.java_field_options).realm_primary_key = true, (.demo.java_field_options).realm_indexed = true];
+    required string id = 1 [(.demo.java_field_options).realm_primary_key = true,
+                            (.demo.java_field_options).realm_indexed = true];
     repeated string items = 2;
 }

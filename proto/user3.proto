@@ -4,7 +4,7 @@ package demo;
 
 option java_package = "ru.bagrusss.demo.proto";
 option java_multiple_files = true;
-option optimize_for = LITE_RUNTIME; //CODE_SIZE
+//option optimize_for = LITE_RUNTIME; //CODE_SIZE
 
 message User3 {
     string name = 1;
@@ -25,7 +25,7 @@ message User3 {
     repeated Phone phones = 4;
 }
 
-message Contacts {
+message Contacts3 {
     repeated User3 people = 1;
 }
 

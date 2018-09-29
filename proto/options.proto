@@ -32,6 +32,7 @@ extend google.protobuf.MessageOptions {
     optional JavaMessageOptions java_message_options = 5100985;
 }
 
+
 extend google.protobuf.EnumOptions {
     optional JavaEnumOptions java_enum_options = 5100984;
 }
@@ -40,8 +41,11 @@ extend google.protobuf.FileOptions {
     optional JavaFileOptions java_file_options = 5100987;
 }
 
+
+
 extend google.protobuf.FieldOptions {
     optional JavaFieldOptions java_field_options = 5100986;
 }
 
 option (.demo.java_file_options).compile_for_framework = false;
+
