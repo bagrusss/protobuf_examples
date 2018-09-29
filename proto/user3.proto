@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package demo;
+
+option java_package = "ru.bagrusss.demo.proto";
+option java_multiple_files = true;
+option optimize_for = LITE_RUNTIME; //CODE_SIZE
+
+message User3 {
+    string name = 1;
+    int64 id = 2;
+    string email = 3;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message Phone {
+        string number = 1;
+        PhoneType type = 2;
+    }
+
+    repeated Phone phones = 4;
+}
+
+message Contacts {
+    repeated User3 people = 1;
+}
+
