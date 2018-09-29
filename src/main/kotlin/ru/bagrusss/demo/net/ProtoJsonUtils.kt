@@ -1,4 +1,4 @@
-package ru.bagrusss.demo
+package ru.bagrusss.demo.net
 
 import com.google.protobuf.Message
 import com.google.protobuf.util.JsonFormat

@@ -1,4 +1,7 @@
-package ru.bagrusss.demo
+package ru.bagrusss.demo.net
+
+import ru.bagrusss.demo.Login
+import ru.bagrusss.demo.Logout
 
 class NetworkExample(private val netSender: NetSender) {
 
