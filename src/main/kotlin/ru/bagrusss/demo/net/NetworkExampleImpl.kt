@@ -31,7 +31,7 @@ class NetSenderImpl(private val baseUrl: String,
     }
 
     private fun send(path: String, method: String, body: ByteArray): ByteArray {
-        val url = "$baseUrl$path"
+        val url = baseUrl + path
         val request = Request.Builder()
                              .url(url)
                              .method(method.toUpperCase(), RequestBody.create(PROTOBUF, body))

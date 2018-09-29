@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package demo;
 
-option java_package = "ru.bagrusss.demo";
+option java_package = "ru.bagrusss.demo.proto";
 option java_multiple_files = true;
 
 import "user.proto";
