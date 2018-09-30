@@ -7,15 +7,19 @@ import io.reactivex.schedulers.Schedulers
 import okhttp3.*
 import java.lang.RuntimeException
 
-class NetworkException(message: String): RuntimeException(message)
+class NetworkException(val errorCode: Int, val body: ByteArray?): RuntimeException()
 
 class NetSenderImpl(private val baseUrl: String,
                     private val okHttpClient: OkHttpClient): NetSender {
 
+    private companion object {
+        const val X_PROTOBUF = "application/x-protobuf"
+        @JvmField val PROTOBUF = MediaType.parse(X_PROTOBUF)
+    }
+
     private val headers = mapOf(
             "Accept" to X_PROTOBUF,
-            "Content-Type" to X_PROTOBUF
-    )
+            "Content-Type" to X_PROTOBUF)
 
     override fun <Request : Message, Response : Message> send(method: String,
                                                               path: String,
@@ -38,14 +42,10 @@ class NetSenderImpl(private val baseUrl: String,
                              .headers(Headers.of(headers))
                              .build()
 
-        val response = okHttpClient.newCall(request).execute()
-        val responseBody = response.body() ?: throw NetworkException("Request body is empty")
-        return responseBody.bytes()
+        return okHttpClient.newCall(request).execute().run {
+             if (!isSuccessful )
+                body()?.bytes() ?: ByteArray(0)
+            else throw NetworkException(code(), body()?.bytes())
+        }
     }
-
-    private companion object {
-        const val X_PROTOBUF = "application/x-protobuf"
-        @JvmField val PROTOBUF = MediaType.parse(X_PROTOBUF)
-    }
-
 }

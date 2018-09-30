@@ -9,9 +9,15 @@ import java.util.concurrent.TimeUnit
 
 fun retrofitExample () {
     val okHttpClient = OkHttpClient.Builder()
-                                   .connectTimeout(15L, TimeUnit.SECONDS)
-                                   .writeTimeout(15L, TimeUnit.SECONDS)
-                                   .readTimeout(15L, TimeUnit.SECONDS)
+                                   .addInterceptor { chain ->
+                                       val request = chain.request()
+                                                          .newBuilder()
+                                                          .header("Accept", "application/x-protobuf")
+                                                          .header("Content-Type", "application/x-protobuf")
+                                                          .build()
+
+                                       chain.proceed(request)
+                                   }
                                    .build()
 
     val retrofit = Retrofit.Builder()
