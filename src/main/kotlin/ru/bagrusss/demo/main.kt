@@ -1,6 +1,7 @@
 package ru.bagrusss.demo
 
 import ru.bagrusss.demo.net.ProtoJsonUtils
+import ru.bagrusss.demo.proto.User
 
 
 fun main(args: Array<String>) {
@@ -16,9 +17,8 @@ fun main(args: Array<String>) {
                     "type": "MOBILE"
                 }
             ]
-        }""".trimIndent()
+        }"""
     val userProto: User = ProtoJsonUtils.fromJson(userJsonString, User.newBuilder())
-
     val userJsonParsed = ProtoJsonUtils.toJson(userProto)
 
     println(userJsonParsed)

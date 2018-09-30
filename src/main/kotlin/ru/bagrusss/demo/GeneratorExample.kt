@@ -3,6 +3,7 @@ package ru.bagrusss.demo
 import com.google.protobuf.DescriptorProtos
 import com.google.protobuf.ExtensionRegistryLite
 import com.google.protobuf.compiler.PluginProtos
+import ru.bagrusss.demo.proto.JavaOptions
 import java.io.InputStream
 import java.io.PrintStream
 
@@ -10,7 +11,7 @@ import java.io.PrintStream
 fun generatorExample(input: InputStream,
                      output: PrintStream) {
     val registry = ExtensionRegistryLite.newInstance()
-    Options.registerAllExtensions(registry)
+    JavaOptions.registerAllExtensions(registry)
 
     val response = PluginProtos.CodeGeneratorResponse.newBuilder()
     val request =  PluginProtos.CodeGeneratorRequest.parseFrom(input, registry)
