@@ -27,5 +27,6 @@ fun retrofitExample () {
                            .addConverterFactory(ProtoConverterFactory.create())
                            .build()
 
+    val authService = retrofit.create(AuthService::class.java)
 
 }
