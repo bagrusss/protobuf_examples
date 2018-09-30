@@ -5,7 +5,7 @@ package demo;
 option java_package = "ru.bagrusss.demo.proto";
 option java_multiple_files = true;
 
-import "options.proto";
+import "proto/java_options.proto";
 
 message OperationList {
     option (.demo.java_message_options) = { generate_realm_object : true };
