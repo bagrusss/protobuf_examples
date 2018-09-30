@@ -16,8 +16,7 @@ fun generatorExample(input: InputStream, output: PrintStream) {
     val request =  PluginProtos.CodeGeneratorRequest.parseFrom(input, registry)
 
     request.protoFileList.forEach { protoFile ->
-        val protoFilePackage = protoFile.`package`
-        val protoFileJavaPackage = protoFile.options.javaPackage
+        val (protoFilePackage, protoFileJavaPackage) = protoFile.`package` to protoFile.options.javaPackage
 
         protoFile.messageTypeList.forEach {
             handleProtoMessage(it)
@@ -36,7 +35,7 @@ fun handleProtoMessage(node: DescriptorProtos.DescriptorProto) {
 
     val isMap = node.options.mapEntry //check if this field map<key, value>
 
-    // fieldlist for current message
+    // fieldList for current message
     node.fieldList.forEach {
 
     }
