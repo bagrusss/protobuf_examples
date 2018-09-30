@@ -14,7 +14,9 @@
 
 [proto plugin for WireShark](https://github.com/128technology/protobuf_dissector)
 
-[protobuf-lite for Java](https://proandroiddev.com/how-to-setup-your-android-app-to-use-protobuf-96132340de5c)
+[protobuf-lite for Java](https://github.com/protocolbuffers/protobuf/blob/master/java/lite.md)
+
+[protobuf-lite example](https://proandroiddev.com/how-to-setup-your-android-app-to-use-protobuf-96132340de5c)
 
 [Square wire](https://github.com/square/wire)
 
