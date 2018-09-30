@@ -28,10 +28,10 @@ public final class Realm {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013realm.proto\022\004demo\032\roptions.proto\"C\n\rOp" +
-      "erationList\022\032\n\002id\030\001 \002(\tB\016\322\333\272\023\002\020\001\322\333\272\023\002\010\001\022" +
-      "\r\n\005items\030\002 \003(\t:\007\312\333\272\023\002\010\001B\032\n\026ru.bagrusss.d" +
-      "emo.protoP\001"
+      "\n\013realm.proto\022\004demo\032\022java_options.proto\"" +
+      "C\n\rOperationList\022\032\n\002id\030\001 \002(\tB\016\322\333\272\023\002\020\001\322\333\272" +
+      "\023\002\010\001\022\r\n\005items\030\002 \003(\t:\007\312\333\272\023\002\010\001B\032\n\026ru.bagru" +
+      "sss.demo.protoP\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -44,7 +44,7 @@ public final class Realm {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          ru.bagrusss.demo.proto.Options.getDescriptor(),
+          ru.bagrusss.demo.proto.JavaOptions.getDescriptor(),
         }, assigner);
     internal_static_demo_OperationList_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -54,11 +54,11 @@ public final class Realm {
         new java.lang.String[] { "Id", "Items", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(ru.bagrusss.demo.proto.Options.javaFieldOptions);
-    registry.add(ru.bagrusss.demo.proto.Options.javaMessageOptions);
+    registry.add(ru.bagrusss.demo.proto.JavaOptions.javaFieldOptions);
+    registry.add(ru.bagrusss.demo.proto.JavaOptions.javaMessageOptions);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    ru.bagrusss.demo.proto.Options.getDescriptor();
+    ru.bagrusss.demo.proto.JavaOptions.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
