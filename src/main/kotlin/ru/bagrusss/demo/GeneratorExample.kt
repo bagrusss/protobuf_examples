@@ -8,8 +8,7 @@ import java.io.InputStream
 import java.io.PrintStream
 
 
-fun generatorExample(input: InputStream,
-                     output: PrintStream) {
+fun generatorExample(input: InputStream, output: PrintStream) {
     val registry = ExtensionRegistryLite.newInstance()
     JavaOptions.registerAllExtensions(registry)
 
@@ -32,12 +31,13 @@ fun generatorExample(input: InputStream,
 fun handleProtoMessage(node: DescriptorProtos.DescriptorProto) {
     // Other nested types
     node.nestedTypeList.forEach {
-
+        handleProtoMessage(it)
     }
+
+    val isMap = node.options.mapEntry //check if this field map<key, value>
 
     // fieldlist for current message
     node.fieldList.forEach {
-        val isMap = node.options.mapEntry //check if this field map<key, value>
 
     }
 }
